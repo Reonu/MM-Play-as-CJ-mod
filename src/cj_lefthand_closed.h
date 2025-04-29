@@ -1,0 +1,1 @@
+extern Gfx gCJSkel_handsclosed_bone015_gLinkHumanLeftHandLimb_mesh_layer_Opaque_tri_0[];

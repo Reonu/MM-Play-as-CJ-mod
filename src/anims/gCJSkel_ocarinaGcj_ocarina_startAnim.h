@@ -1,0 +1,1 @@
+extern LinkAnimationHeader gCJSkel_ocarinaGcj_ocarina_startAnim;
