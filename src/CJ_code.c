@@ -108,6 +108,8 @@ RECOMP_HOOK("Player_Update") void on_Player_Update(Actor* thisx, PlayState* play
     CJProperties.voiceSfxIdOffset = SFX_VOICE_BANK_SIZE * 0;
     CJProperties.surfaceSfxIdOffset = 0x80;
     sPlayerAgeProperties[PLAYER_FORM_HUMAN] = CJProperties;
+    *(LinkAnimationHeader*)Lib_SegmentedToVirtual(&gPlayerAnim_link_normal_okarina_start) = gCJSkel_ocarinaGcj_ocarina_startAnim;
+    *(LinkAnimationHeader*)Lib_SegmentedToVirtual(&gPlayerAnim_link_normal_okarina_swing) = gCJSkel_ocarinaGcj_ocarina_swingAnim;
 }
 
 RECOMP_HOOK("Player_Init") void on_Player_Init(Actor* thisx, PlayState* play) {
@@ -155,16 +157,13 @@ RECOMP_HOOK("Player_Init") void on_Player_Init(Actor* thisx, PlayState* play) {
     D_801C018C[3] = gCJLeftHandHoldingRazorSwordDL;
     D_801C018C[4] = gCJLeftHandHoldingGildedSwordDL;
     D_801C018C[5] = gCJLeftHandHoldingGildedSwordDL;
-
-    *(LinkAnimationHeader*)Lib_SegmentedToVirtual(&gPlayerAnim_link_normal_okarina_start) = gCJSkel_ocarinaGcj_ocarina_startAnim;
-    *(LinkAnimationHeader*)Lib_SegmentedToVirtual(&gPlayerAnim_link_normal_okarina_swing) = gCJSkel_ocarinaGcj_ocarina_swingAnim;
 }
 
 #define CJ_MASK_SCALE_MODIFIER 0.5f
 #define CJ_MASK_DOWNWARDS_OFFSET -10.f
 #define CJ_MASK_FORWARDS_OFSSEET 350.f
 #define CJ_MASK_LATERAL_OFFSET 0.f
-u8 gPushedDeezNuts;
+u8 gPushedMatrix;
 extern Gfx* D_801C0B20[];
 extern LinkAnimationHeader gPlayerAnim_cl_setmask;
 RECOMP_HOOK("Player_PostLimbDrawGameplay") void on_Player_PostLimbDrawGameplay(PlayState* play, s32 limbIndex, Gfx** dList1, Gfx** dList2, Vec3s* rot, Actor* actor) {
@@ -179,24 +178,24 @@ RECOMP_HOOK("Player_PostLimbDrawGameplay") void on_Player_PostLimbDrawGameplay(P
                 s32 maskMinusOne = player->currentMask - 1;
                 OPEN_DISPS(play->state.gfxCtx);
                 Matrix_Push();
-                gPushedDeezNuts = 1;
+                gPushedMatrix = 1;
                 Matrix_Scale(CJ_MASK_SCALE_MODIFIER, CJ_MASK_SCALE_MODIFIER, CJ_MASK_SCALE_MODIFIER, MTXMODE_APPLY);
                 Matrix_Translate(CJ_MASK_FORWARDS_OFSSEET, CJ_MASK_DOWNWARDS_OFFSET, CJ_MASK_LATERAL_OFFSET, MTXMODE_APPLY);
                 MATRIX_FINALIZE_AND_LOAD(POLY_OPA_DISP++, play->state.gfxCtx);
                 CLOSE_DISPS(play->state.gfxCtx);
         } else {
-            gPushedDeezNuts = 0;
+            gPushedMatrix = 0;
         }    
     } else {
-        gPushedDeezNuts = 0;
+        gPushedMatrix = 0;
     }
 }
 
 RECOMP_HOOK_RETURN("Player_PostLimbDrawGameplay") void return_Player_PostLimbDrawGameplay(void) {
-    if (gPushedDeezNuts) {
+    if (gPushedMatrix) {
         Matrix_Pop();
     }
-    gPushedDeezNuts = 0;
+    gPushedMatrix = 0;
 }
 
 typedef struct BunnyEarKinematics {
