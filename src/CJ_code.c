@@ -75,6 +75,11 @@ Gfx gCJLeftHandHoldingRazorSwordDL[] = {
     gsSPBranchList(gRazorSwordDL),
 };
 
+Gfx gCJRightHandShoulderAndForearm[] = {
+    gsSPDisplayList(gCJSkel_bone017_gLinkHumanRightForearmLimb_mesh_layer_Opaque_tri_0),
+    gsSPBranchList(gCJSkel_bone016_gLinkHumanRightShoulderLimb_mesh_layer_Opaque_tri_0),
+};
+
 Gfx gCJRightHandHoldingBowDL[] = {
     gsSPDisplayList(gCJSkel_handsclosed_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque_tri_0),
     gsSPBranchList(gLinkHumanBowDL),
@@ -137,7 +142,7 @@ RECOMP_HOOK("Player_Init") void on_Player_Init(Actor* thisx, PlayState* play) {
 
     sPlayerFirstPersonLeftForearmDLs[PLAYER_FORM_HUMAN] = gCJSkel_bone014_gLinkHumanLeftForearmLimb_mesh_layer_Opaque_tri_0;
     sPlayerFirstPersonLeftHandDLs[PLAYER_FORM_HUMAN] = gCJSkel_bone015_gLinkHumanLeftHandLimb_mesh_layer_Opaque_tri_0;
-    sPlayerFirstPersonRightShoulderDLs[PLAYER_FORM_HUMAN] = gCJSkel_bone017_gLinkHumanRightForearmLimb_mesh_layer_Opaque_tri_0;
+    sPlayerFirstPersonRightShoulderDLs[PLAYER_FORM_HUMAN] = gCJRightHandShoulderAndForearm;
     sPlayerFirstPersonRightHandDLs[PLAYER_FORM_HUMAN] = gCJSkel_bow_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque;
     sPlayerFirstPersonRightHandHookshotDLs[PLAYER_FORM_HUMAN] = gCJSkel_hookshot_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque;
 
