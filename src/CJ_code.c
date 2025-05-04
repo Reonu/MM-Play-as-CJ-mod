@@ -92,6 +92,7 @@ extern Gfx* gPlayerHandHoldingShields[];
 
 extern LinkAnimationHeader gPlayerAnim_link_normal_okarina_start[];
 extern LinkAnimationHeader gPlayerAnim_link_normal_okarina_swing[];
+extern Input* sPlayerControlInput;
 
 RECOMP_HOOK("Player_Update") void on_Player_Update(Actor* thisx, PlayState* play) {
     PlayerAgeProperties CJProperties;
@@ -269,4 +270,12 @@ RECOMP_HOOK ("Player_GetHeight") void on_Player_GetHeight(Player* player) {
 
 RECOMP_HOOK_RETURN ("Player_GetHeight") void return_Player_GetHeight(void) {
     gOriginalPlayer->transformation = gOriginalPlayerTransformation;
+}
+
+f32 sRefPosOffsetX = 0.f;
+f32 sRefPosOffsetY = 0.f;
+f32 sRefPosOffsetZ = 0.f;
+RECOMP_HOOK ("Player_DrawGetItemImpl") void on_Player_DrawGetItemImpl(PlayState* play, Player* player, Vec3f* refPos, s32 drawIdPlusOne) {
+    refPos->y += 10.f;
+    refPos->z += 2.5f;
 }
