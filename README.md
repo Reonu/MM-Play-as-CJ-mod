@@ -1,20 +1,20 @@
-# Majora's Mask: Recompiled Mod Template
+# Play as CJ mod for Majora's Mask
 
-This is an example mod for Majora's Mask: Recompiled that can be used as a template for creating mods. It has a basic build system, headers, sample code, and a mod config toml.
+![Zelda 64_ Recompiled 04_05_2025 9_22_52](https://github.com/user-attachments/assets/3a3c8dbf-4f58-431d-a279-e29a539b76f8)
 
-### Writing mods
-See [this document](https://hackmd.io/fMDiGEJ9TBSjomuZZOgzNg) for an explanation of the modding framework, including how to write function patches and perform interop between different mods.
+This mod lets you play as CJ in Majora's Mask
 
-### Tools
-You'll need to install `clang` and `make` to build this template.
-* On Windows, using [chocolatey](https://chocolatey.org/) to install both is recommended. The packages are `llvm` and `make` respectively.
-  * The LLVM 19.1.0 [llvm-project](https://github.com/llvm/llvm-project) release binary, which is also what chocolatey provides, does not support MIPS correctly. The solution is to install 18.1.8 instead, which can be done in chocolatey by specifying `--version 18.1.8` or by downloading the 18.1.8 release directly.
-* On Linux, these can both be installed using your distro's package manager.
-* On MacOS, these can both be installed using Homebrew. Apple clang won't work, as you need a mips target for building the mod code.
+### Known issues
+- CJ's right arm sometimes glitches out in first person.
+- GetItem models might not always be aligned correctly.
+- The Bunny Hood and Great Fairy Mask are too big.
+- CJ is too tall for some cutscenes. The [No Letterboxing Mod](https://thunderstore.io/c/zelda-64-recompiled/p/LT_Schmiddy/No_Letterboxing/) is recommended to alleviate this somewhat.
+  - This might be fixed in the future by making CJ crouch in cutscenes when standing still, just like he does now when playing the ocarina.
 
-On Linux and MacOS, you'll need to also ensure that you have the `zip` utility installed.
+### Planned updates
+- Sound
+- Making Big Smoke optional and improving his skinning
 
-You'll also need to build [N64Recomp](https://github.com/N64Recomp/N64Recomp) for the `RecompModTool` utility.
 
 ### Building
 * First, run `make` (with an optional job count) to build the mod code itself.
