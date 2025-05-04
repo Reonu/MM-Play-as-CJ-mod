@@ -15,7 +15,6 @@ This mod lets you play as CJ in Majora's Mask
 - Sound
 - Making Big Smoke optional and improving his skinning
 
-
 ### Building
 * First, run `make` (with an optional job count) to build the mod code itself.
 * Next, run the `RecompModTool` utility with `mod.toml` as the first argument and the build dir (`build` in the case of this template) as the second argument.
