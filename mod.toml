@@ -5,10 +5,10 @@
 
 # Unique ID of this mod. Pick something long enough that it'll never be the same as any other mod.
 # The name displayed in the mod management menu is separate from this so this doesn't need to be human readable.
-id = "mm_reonu_cj_playermodel"
+id = "mm_reonu_play_as_cj"
 
 # Version of this mod.
-version = "1.0.0"
+version = "0.9.0"
 
 # The name that will show up for this mod in the mod menu. This should be human readable.
 display_name = "Play as CJ"
@@ -19,7 +19,7 @@ Ah shit, here we go again."""
 
 # A short description that will show up in this mod's entry in the mod list. This should be human readable and kept short
 # to prevent it from being cut off due to the limited space.
-short_description = "Ah shit, here we go again."
+short_description = "Clock Town. Home."
 
 # Authors of this mod.
 authors = [ "Reonu" ]
@@ -48,7 +48,7 @@ native_libraries = [
 elf_path = "build/mod.elf"
 
 # Output mod filename.
-mod_filename = "CJ"
+mod_filename = "play_as_cj"
 
 # Reference symbol files.
 func_reference_syms_file = "Zelda64RecompSyms/mm.us.rev1.syms.toml"

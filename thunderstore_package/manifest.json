@@ -1,0 +1,9 @@
+{
+    "name": "Play_as_CJ",
+    "version_number": "0.9.0",
+    "website_url": "https://github.com/Reonu/MM-Play-as-CJ-mod",
+    "description": "Clock Town. Home.",
+    "dependencies": [
+        "LT_Schmiddy-EZ_Text_Replacer_API-2.0.0"
+    ]
+}
