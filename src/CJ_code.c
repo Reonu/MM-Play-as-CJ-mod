@@ -43,6 +43,7 @@ extern Gfx* gLinkHumanHerosShieldDL[];
 extern Gfx* gKokiriSwordDL[];
 extern Gfx* gRazorSwordDL[];
 extern Gfx* gLinkHumanBowDL[];
+extern Gfx* gLinkHumanHookshotDL[];
 
 extern Gfx* D_801C018C[];
 
@@ -85,6 +86,10 @@ Gfx gCJRightHandHoldingBowDL[] = {
     gsSPBranchList(gLinkHumanBowDL),
 };
 
+Gfx gCJRightHandHoldingHookshotDL[] = {
+    gsSPDisplayList(gCJSkel_handsclosed_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque_tri_0),
+    gsSPBranchList(gLinkHumanHookshotDL),
+};
 
 extern PlayerAgeProperties sPlayerAgeProperties[PLAYER_FORM_MAX];
 static PlayerAgeProperties savedAgeProperties[2];
@@ -126,8 +131,8 @@ RECOMP_HOOK("Player_Init") void on_Player_Init(Actor* thisx, PlayState* play) {
     gPlayerRightHandClosedDLs[PLAYER_FORM_HUMAN * 2 + 1] = gCJSkel_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque;
     gPlayerRightHandInstrumentDLs[PLAYER_FORM_HUMAN * 2 + 0] = gCJSkel_ocarina_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque;
     gPlayerRightHandInstrumentDLs[PLAYER_FORM_HUMAN * 2 + 1] = gCJSkel_ocarina_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque;
-    gPlayerRightHandHookshotDLs[PLAYER_FORM_HUMAN * 2 + 0] = gCJSkel_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque;
-    gPlayerRightHandHookshotDLs[PLAYER_FORM_HUMAN * 2 + 1] = gCJSkel_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque;
+    gPlayerRightHandHookshotDLs[PLAYER_FORM_HUMAN * 2 + 0] = gCJRightHandHoldingHookshotDL;
+    gPlayerRightHandHookshotDLs[PLAYER_FORM_HUMAN * 2 + 1] = gCJRightHandHoldingHookshotDL;
     
     gPlayerLeftHandOpenDLs[PLAYER_FORM_HUMAN * 2 + 0] = gCJSkel_bone015_gLinkHumanLeftHandLimb_mesh_layer_Opaque;
     gPlayerLeftHandOpenDLs[PLAYER_FORM_HUMAN * 2 + 1] = gCJSkel_bone015_gLinkHumanLeftHandLimb_mesh_layer_Opaque;
