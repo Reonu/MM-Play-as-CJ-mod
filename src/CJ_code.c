@@ -2,7 +2,6 @@
 #include "global.h"
 #include "gCJSkel.h"
 #include "cj_lefthand_closed.h"
-#include "cj_righthand_closed.h"
 #include "cj_ocarina.h"
 #include "cj_bow.h"
 #include "cj_hookshot.h"
@@ -99,28 +98,30 @@ extern LinkAnimationHeader gPlayerAnim_link_normal_okarina_start[];
 extern LinkAnimationHeader gPlayerAnim_link_normal_okarina_swing[];
 extern Input* sPlayerControlInput;
 
-RECOMP_HOOK("Player_Update") void on_Player_Update(Actor* thisx, PlayState* play) {
+void updateLink(PlayState* play) {
     PlayerAgeProperties CJProperties;
     Player* player = GET_PLAYER(play);
-
-    CJProperties = sPlayerAgeProperties[PLAYER_FORM_ZORA];
-    CJProperties.unk_28 = 44.8f;
-    CJProperties.unk_3C = 15.0f;
-    CJProperties.unk_44 = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_44;
-    CJProperties.unk_4A->x = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_4A->x;
-    CJProperties.unk_4A->y = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_4A->y;
-    CJProperties.unk_4A->z = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_4A->z;
-    CJProperties.unk_62->x = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_62->x;
-    CJProperties.unk_62->y = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_62->y;
-    CJProperties.unk_62->z = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_62->z;
-    CJProperties.unk_7A->x = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_7A->x;
-    CJProperties.unk_7A->y = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_7A->y;
-    CJProperties.unk_7A->z = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_7A->z;
-    CJProperties.voiceSfxIdOffset = SFX_VOICE_BANK_SIZE * 0;
-    CJProperties.surfaceSfxIdOffset = 0x80;
-    sPlayerAgeProperties[PLAYER_FORM_HUMAN] = CJProperties;
-    *(LinkAnimationHeader*)Lib_SegmentedToVirtual(&gPlayerAnim_link_normal_okarina_start) = gCJSkel_ocarinaGcj_ocarina_startAnim;
-    *(LinkAnimationHeader*)Lib_SegmentedToVirtual(&gPlayerAnim_link_normal_okarina_swing) = gCJSkel_ocarinaGcj_ocarina_swingAnim;
+    if (player->transformation == PLAYER_FORM_HUMAN) {
+        CJProperties = sPlayerAgeProperties[PLAYER_FORM_ZORA];
+        CJProperties.unk_28 = 44.8f;
+        CJProperties.unk_3C = 15.0f;
+        CJProperties.unk_44 = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_44;
+        CJProperties.unk_4A->x = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_4A->x;
+        CJProperties.unk_4A->y = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_4A->y;
+        CJProperties.unk_4A->z = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_4A->z;
+        CJProperties.unk_62->x = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_62->x;
+        CJProperties.unk_62->y = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_62->y;
+        CJProperties.unk_62->z = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_62->z;
+        CJProperties.unk_7A->x = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_7A->x;
+        CJProperties.unk_7A->y = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_7A->y;
+        CJProperties.unk_7A->z = sPlayerAgeProperties[PLAYER_FORM_FIERCE_DEITY].unk_7A->z;
+        CJProperties.voiceSfxIdOffset = SFX_VOICE_BANK_SIZE * 0;
+        CJProperties.surfaceSfxIdOffset = 0x80;
+        sPlayerAgeProperties[PLAYER_FORM_HUMAN] = CJProperties;
+        player->ageProperties = &sPlayerAgeProperties[PLAYER_FORM_HUMAN];
+        *(LinkAnimationHeader*)Lib_SegmentedToVirtual(&gPlayerAnim_link_normal_okarina_start) = gCJSkel_ocarinaGcj_ocarina_startAnim;
+        *(LinkAnimationHeader*)Lib_SegmentedToVirtual(&gPlayerAnim_link_normal_okarina_swing) = gCJSkel_ocarinaGcj_ocarina_swingAnim;
+    }
 }
 
 RECOMP_HOOK("Player_Init") void on_Player_Init(Actor* thisx, PlayState* play) {
@@ -270,17 +271,16 @@ u8 gOriginalPlayerTransformation;
 RECOMP_HOOK ("Player_GetHeight") void on_Player_GetHeight(Player* player) {
     gOriginalPlayer = player;
     gOriginalPlayerTransformation = player->transformation;
-    player->transformation = PLAYER_FORM_ZORA;
+    if (player->transformation == PLAYER_FORM_HUMAN) {
+        player->transformation = PLAYER_FORM_ZORA;
+    }
 }
 
 RECOMP_HOOK_RETURN ("Player_GetHeight") void return_Player_GetHeight(void) {
     gOriginalPlayer->transformation = gOriginalPlayerTransformation;
 }
 
-f32 sRefPosOffsetX = 0.f;
-f32 sRefPosOffsetY = 0.f;
-f32 sRefPosOffsetZ = 0.f;
-RECOMP_HOOK ("Player_DrawGetItemImpl") void on_Player_DrawGetItemImpl(PlayState* play, Player* player, Vec3f* refPos, s32 drawIdPlusOne) {
-    refPos->y += 10.f;
-    refPos->z += 2.5f;
+RECOMP_CALLBACK("*", recomp_on_play_main)
+void mainUpdate(PlayState* play) {
+    updateLink(play);
 }

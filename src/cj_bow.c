@@ -2,11 +2,6 @@
 
 extern u64 gCJSkel_upperbody_hd_rgba16[];
 
-u64 gCJSkel_bow_tex_01A280_ci8_png_001_pal_rgba16[] = {
-	0x30c128c118812081, 0x1041288110810841, 0x08010001b441d4c1, 0xee43ff45ff85ffd5, 0xffd7ffcfe541ccc1, 0x9b41728149c1c441, 0xdd01dd43ff93ff09, 0xee87e5c7a381b401, 
-	0xf643e605e5838301, 0x59c1a3c1cc81f6c9, 0xe5c3bc4193415a01, 0xde05d58562436a01, 0xcd036a817ac10000
-};
-
 u64 gCJSkel_bow_tex_01A280_ci8_png_001_ci8[] = {
 	0x0000000000000000, 0x0000000000000100, 0x0203000000000000, 0x0000000000010303, 0x0402050000000000, 0x0000000001050302, 0x0402030000000000, 0x0000000101030204, 
 	0x0402020500000000, 0x0000000101030306, 0x0704020301010000, 0x0001010101030204, 0x0804040303050101, 0x0101010102020407, 0x0904040202020202, 0x0202020202040408, 
@@ -15,12 +10,9 @@ u64 gCJSkel_bow_tex_01A280_ci8_png_001_ci8[] = {
 	
 };
 
-u64 gCJSkel_bow_tex_019A80_ci8_png_001_pal_rgba16[] = {
-	0xff43ff03f683f643, 0xdd43d483b38130c1, 0x28c1288120811081, 0x08410001ee43ee03, 0xe583dd03cc4320c1, 0x1041f6c3edc3c403, 0x1881e5c3bbc1fec3, 0xc3c13101c3c3bb81, 
-	0xd4c1cc8338c13901, 0x18c149c15a014141, 0x3141a3c1bc41ffc3, 0x41012901cd03ffc5, 0x39836a81ff854981, 0xf6c58303ee87ff09, 0xff45d585f70fff93, 0xe645de05ccc36243, 
-	0xffd5e649cd45b485, 0xa381a341b441eecd, 0xd547ac877ac18b01, 0x08018301ffd7ee8b, 0xc507a40593c57305, 0x7281c441cd859c05, 0x7b0572c55a4559c1, 0xdd01b4877b456283, 
-	0x52456a8552034183, 0x290320c3c5059bc5, 0x83453143ab81e541, 0x83852103ee07f6c9, 0xb4c549c39b418b85, 0x18c39341520541c5, 0xdd45cc816ac54a05, 0x8b41abc3ccc5b403, 
-	0xc483e5c71083c545, 0x72c3ac03a445cd05, 0xac452943ac43e605, 0x8ac17b036a0149c5, 0x6ac3ac855181ffcf, 0xccc1fe83b4010000
+u64 gCJSkel_bow_tex_01A280_ci8_png_001_pal_rgba16[] = {
+	0x30c128c118812081, 0x1041288110810841, 0x08010001b441d4c1, 0xee43ff45ff85ffd5, 0xffd7ffcfe541ccc1, 0x9b41728149c1c441, 0xdd01dd43ff93ff09, 0xee87e5c7a381b401, 
+	0xf643e605e5838301, 0x59c1a3c1cc81f6c9, 0xe5c3bc4193415a01, 0xde05d58562436a01, 0xcd036a817ac10000
 };
 
 u64 gCJSkel_bow_tex_019A80_ci8_png_001_ci8[] = {
@@ -59,16 +51,12 @@ u64 gCJSkel_bow_tex_019A80_ci8_png_001_ci8[] = {
 	
 };
 
-
-Gfx mat_gCJSkel_bow_body_upper_f3d_layerOpaque[] = {
-	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
-	gsDPPipeSync(),
-	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
-	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
-	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
-	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
-	gsSPEndDisplayList(),
+u64 gCJSkel_bow_tex_019A80_ci8_png_001_pal_rgba16[] = {
+	0xff43ff03f683f643, 0xdd43d483b38130c1, 0x28c1288120811081, 0x08410001ee43ee03, 0xe583dd03cc4320c1, 0x1041f6c3edc3c403, 0x1881e5c3bbc1fec3, 0xc3c13101c3c3bb81, 
+	0xd4c1cc8338c13901, 0x18c149c15a014141, 0x3141a3c1bc41ffc3, 0x41012901cd03ffc5, 0x39836a81ff854981, 0xf6c58303ee87ff09, 0xff45d585f70fff93, 0xe645de05ccc36243, 
+	0xffd5e649cd45b485, 0xa381a341b441eecd, 0xd547ac877ac18b01, 0x08018301ffd7ee8b, 0xc507a40593c57305, 0x7281c441cd859c05, 0x7b0572c55a4559c1, 0xdd01b4877b456283, 
+	0x52456a8552034183, 0x290320c3c5059bc5, 0x83453143ab81e541, 0x83852103ee07f6c9, 0xb4c549c39b418b85, 0x18c39341520541c5, 0xdd45cc816ac54a05, 0x8b41abc3ccc5b403, 
+	0xc483e5c71083c545, 0x72c3ac03a445cd05, 0xac452943ac43e605, 0x8ac17b036a0149c5, 0x6ac3ac855181ffcf, 0xccc1fe83b4010000
 };
 
 Vtx gCJSkel_bow_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque_vtx_0[193] = {
@@ -274,9 +262,9 @@ Gfx gCJSkel_bow_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque_tri_0[] = {
 	gsDPLoadTile(7, 544, 56, 632, 392),
 	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 6, 0, 0, 0, G_TX_CLAMP | G_TX_NOMIRROR, 0, 0, G_TX_CLAMP | G_TX_NOMIRROR, 0, 0),
 	gsDPSetTileSize(0, 544, 56, 632, 392),
-	gsSPMatrix(0x0d000300, G_MTX_LOAD),
+	gsSPMatrix(0x0d000380, G_MTX_LOAD),
 	gsSPVertex(gCJSkel_bow_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque_vtx_0 + 0, 7, 0),
-	gsSPMatrix(0x0d000340, G_MTX_LOAD),
+	gsSPMatrix(0x0d0003c0, G_MTX_LOAD),
 	gsSPVertex(gCJSkel_bow_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque_vtx_0 + 7, 24, 7),
 	gsSP2Triangles(0, 7, 8, 0, 0, 8, 1, 0),
 	gsSP2Triangles(9, 1, 8, 0, 9, 10, 1, 0),
@@ -392,25 +380,6 @@ Gfx gCJSkel_bow_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque_tri_0[] = {
 	gsSP2Triangles(6, 7, 8, 0, 8, 7, 9, 0),
 	gsSP2Triangles(8, 9, 10, 0, 9, 11, 10, 0),
 	gsSP1Triangle(12, 8, 10, 0),
-	gsSPEndDisplayList(),
-};
-
-Gfx mat_gCJSkel_bow_bow1_layerOpaque[] = {
-	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
-	gsDPPipeSync(),
-	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, TEXEL0, PRIMITIVE, 0, COMBINED, 0, 0, 0, 0, COMBINED),
-	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_RGBA16 | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
-	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
-	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetPrimColor(0, 128, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, gCJSkel_bow_tex_01A280_ci8_png_001_pal_rgba16),
-	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
-	gsDPLoadTLUTCmd(5, 50),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 1, gCJSkel_bow_tex_01A280_ci8_png_001_ci8),
-	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
-	gsDPLoadBlock(7, 0, 0, 127, 1024),
-	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b, 2, 0, 0, 0, G_TX_CLAMP | G_TX_MIRROR, 4, 0, G_TX_CLAMP | G_TX_MIRROR, 4, 0),
-	gsDPSetTileSize(0, 0, 0, 60, 60),
 	gsSPEndDisplayList(),
 };
 
@@ -561,25 +530,6 @@ Gfx gCJSkel_bow_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque_tri_1[] = {
 	gsSP2Triangles(6, 7, 8, 0, 9, 10, 11, 0),
 	gsSP2Triangles(12, 13, 14, 0, 15, 16, 17, 0),
 	gsSP2Triangles(18, 19, 20, 0, 21, 22, 23, 0),
-	gsSPEndDisplayList(),
-};
-
-Gfx mat_gCJSkel_bow_bow2_layerOpaque[] = {
-	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
-	gsDPPipeSync(),
-	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, TEXEL0, PRIMITIVE, 0, COMBINED, 0, 0, 0, 0, COMBINED),
-	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_RGBA16 | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
-	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
-	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetPrimColor(0, 128, 255, 255, 255, 255),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, gCJSkel_bow_tex_019A80_ci8_png_001_pal_rgba16),
-	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
-	gsDPLoadTLUTCmd(5, 150),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 1, gCJSkel_bow_tex_019A80_ci8_png_001_ci8),
-	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
-	gsDPLoadBlock(7, 0, 0, 1023, 512),
-	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b, 4, 0, 0, 0, G_TX_CLAMP | G_TX_MIRROR, 6, 0, G_TX_CLAMP | G_TX_MIRROR, 5, 0),
-	gsDPSetTileSize(0, 0, 0, 124, 252),
 	gsSPEndDisplayList(),
 };
 
@@ -775,6 +725,55 @@ Gfx gCJSkel_bow_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque_tri_2[] = {
 	gsSP2Triangles(24, 25, 26, 0, 27, 28, 29, 0),
 	gsSPVertex(gCJSkel_bow_bone018_gLinkHumanRightHandLimb_mesh_layer_Opaque_vtx_2 + 150, 6, 0),
 	gsSP2Triangles(0, 1, 2, 0, 3, 4, 5, 0),
+	gsSPEndDisplayList(),
+};
+
+Gfx mat_gCJSkel_bow_bow2_layerOpaque[] = {
+	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
+	gsDPPipeSync(),
+	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, TEXEL0, PRIMITIVE, 0, COMBINED, 0, 0, 0, 0, COMBINED),
+	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_RGBA16 | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
+	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
+	gsSPTexture(65535, 65535, 0, 0, 1),
+	gsDPSetPrimColor(0, 128, 255, 255, 255, 255),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, gCJSkel_bow_tex_019A80_ci8_png_001_pal_rgba16),
+	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
+	gsDPLoadTLUTCmd(5, 150),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 1, gCJSkel_bow_tex_019A80_ci8_png_001_ci8),
+	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
+	gsDPLoadBlock(7, 0, 0, 1023, 512),
+	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b, 4, 0, 0, 0, G_TX_CLAMP | G_TX_MIRROR, 6, 0, G_TX_CLAMP | G_TX_MIRROR, 5, 0),
+	gsDPSetTileSize(0, 0, 0, 124, 252),
+	gsSPEndDisplayList(),
+};
+
+Gfx mat_gCJSkel_bow_bow1_layerOpaque[] = {
+	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
+	gsDPPipeSync(),
+	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, TEXEL0, PRIMITIVE, 0, COMBINED, 0, 0, 0, 0, COMBINED),
+	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_RGBA16 | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
+	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
+	gsSPTexture(65535, 65535, 0, 0, 1),
+	gsDPSetPrimColor(0, 128, 255, 255, 255, 255),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, gCJSkel_bow_tex_01A280_ci8_png_001_pal_rgba16),
+	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
+	gsDPLoadTLUTCmd(5, 50),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 1, gCJSkel_bow_tex_01A280_ci8_png_001_ci8),
+	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
+	gsDPLoadBlock(7, 0, 0, 127, 1024),
+	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b, 2, 0, 0, 0, G_TX_CLAMP | G_TX_MIRROR, 4, 0, G_TX_CLAMP | G_TX_MIRROR, 4, 0),
+	gsDPSetTileSize(0, 0, 0, 60, 60),
+	gsSPEndDisplayList(),
+};
+
+Gfx mat_gCJSkel_bow_body_upper_f3d_layerOpaque[] = {
+	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
+	gsDPPipeSync(),
+	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, COMBINED, 0, PRIMITIVE, 0, 0, 0, 0, COMBINED),
+	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
+	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_OPA_SURF2),
+	gsSPTexture(65535, 65535, 0, 0, 1),
+	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
 	gsSPEndDisplayList(),
 };
 
